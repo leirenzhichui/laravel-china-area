@@ -1,20 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: aoxiang
- * Date: 2019-06-05
- * Time: 11:35.
- */
 
-namespace Aoxiang\Pca\Commands;
+namespace Ydjharris\Area\Commands;
 
-use Aoxiang\Pca\Models\ProvinceCityArea as PCAModel;
+use Ydjharris\Area\Models\ProvinceCityArea as PCAModel;
 use Illuminate\Console\Command;
 
 class ClearData extends Command
 {
-    protected $signature = 'pca:clearData';
-    protected $description = '清空province_city_area表中省市县数据';
+    protected $signature = 'area:clearData';
+    protected $description = '清空area表中省市县数据';
 
     public function handle()
     {

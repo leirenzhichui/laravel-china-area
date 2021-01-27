@@ -1,10 +1,10 @@
 <?php
 
-namespace Aoxiang\Pca;
+namespace Ydjharris\Area;
 
 use Illuminate\Support\ServiceProvider;
 
-class ProvinceCityAreaServiceProvider extends ServiceProvider
+class ChinaAreaServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
@@ -13,8 +13,8 @@ class ProvinceCityAreaServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('provincecityarea', function () {
-            return $this->app->make('Aoxiang\Pca\ProvinceCityArea');
+        $this->app->singleton('chinaarea', function () {
+            return $this->app->make('Ydjharris\Area\ChinaArea');
         });
     }
 

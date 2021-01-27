@@ -1,6 +1,4 @@
-# Laravel-Province-City-Area   「全国省市县乡镇街道」数据(数据来源于京东，内置爬虫，可自行获取最新数据)
-
-![StyleCI build status](https://github.styleci.io/repos/190225659/shield) 
+# Laravel-China-Area   「全国省市县乡镇街道」数据(数据来源于京东，内置爬虫，可自行获取最新数据)
 
 这是一个提供「全国省市县乡镇街道」数据的轮子
 
@@ -11,22 +9,18 @@
 
 > 内部自带京东「省市县乡镇街道」数据爬虫，用户可以自行运行爬取最新的「省市县乡镇街道」数据
 
-#### 项目地址
+#### 原项目地址
 https://github.com/aoxiang594/laravel-province-city-area
 
 #### Composer 安装
 ```
 composer require aoxiang/province-city-area
 ```
- 
-
-#### 添加provider（laravel 版本 < 5.5）
-将`Aoxiang\Pca\ProvinceCityAreaServiceProvider::class`复制到`config.php`内`providers`数组内
 
 #### 生成数据库迁移文件：
 
 ```
-php artisan vendor:publish --provider="Aoxiang\Pca\ProvinceCityAreaServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Ydjharris\Area\ChinaAreaServiceProvider" --tag="migrations"
 ```
 
 #### 执行数据库迁移

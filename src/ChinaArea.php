@@ -1,16 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: aoxiang
- * Date: 2019-06-04
- * Time: 21:46.
- */
 
-namespace Aoxiang\Pca;
+namespace Ydjharris\Area;
 
-use Aoxiang\Pca\Models\ProvinceCityArea as PCA;
+use Ydjharris\Area\Models\Area as Area;
 
-class ProvinceCityArea
+class ChinaArea
 {
     public static function test()
     {
@@ -69,17 +63,17 @@ class ProvinceCityArea
 
     protected static function getListByParentId($parentId)
     {
-        return PCA::where('parent_id', $parentId)->get();
+        return Area::where('parent_id', $parentId)->get();
     }
 
     protected static function getItem($id)
     {
-        return PCA::where('id', $id)->first();
+        return Area::where('id', $id)->first();
     }
 
     protected static function getListByType($type = 'province')
     {
-        return PCA::where('type', $type)->get();
+        return Area::where('type', $type)->get();
     }
 
     public static function getName($provinceId, $cityId, $areaId, $streetId)

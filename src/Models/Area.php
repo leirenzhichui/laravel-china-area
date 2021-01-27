@@ -1,18 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: aoxiang
- * Date: 2019-06-04
- * Time: 22:34.
- */
 
-namespace Aoxiang\Pca\Models;
+namespace Ydjharris\Area\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProvinceCityArea extends Model
+class Area extends Model
 {
-    public $table = 'province_city_area';
+    public $table = 'areas';
     public $fillable = ['id', 'name', 'parent_id', 'type'];
 
     public function __construct(array $attributes = [])

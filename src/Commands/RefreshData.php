@@ -1,21 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: aoxiang
- * Date: 2019-06-05
- * Time: 11:35.
- */
 
-namespace Aoxiang\Pca\Commands;
+namespace Ydjharris\Area\Commands;
 
-use Aoxiang\Pca\Models\ProvinceCityArea as PCAModel;
+use Ydjharris\Area\Models\ProvinceCityArea as PCAModel;
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
 class RefreshData extends Command
 {
-    protected $signature = 'pca:refreshData {--d|driver=file}';
+    protected $signature = 'area:refreshData {--d|driver=file}';
     protected $description = '从京东获取最新的省市县数据,--d:jd|file jd-从京东获取最新数据，file-从本地文件获取';
     public $client = null;
     public $provinceList = null;
@@ -41,7 +35,7 @@ class RefreshData extends Command
 //        }
         if ($this->option('driver') == 'file') {
             $this->line('您选择从本地文件中载入省市县数据');
-            $this->line('如果您要强制从京东获取，请执行php artisan pca:refreshData -d jd');
+            $this->line('如果您要强制从京东获取，请执行php artisan area:refreshData -d jd');
             //从本地文件中获取省市县数据
             $data = file_get_contents(__DIR__.'/../resource/province-city-area.json');
             $data = json_decode($data, true);
@@ -204,21 +198,21 @@ class RefreshData extends Command
                                 'type'      => 'street',
                             ];
                         }
-                        DB::table('province_city_area')->insert($streetList);
+                        DB::table('areas')->insert($streetList);
                         $bar->advance(count($streetList));
                         $countResult['street'] += count($streetList);
                     }
-                    DB::table('province_city_area')->insert($areaList);
+                    DB::table('areas')->insert($areaList);
                     $bar->advance(count($areaList));
                     $countResult['area'] += count($areaList);
                 }
 
-                DB::table('province_city_area')->insert($cityList);
+                DB::table('areas')->insert($cityList);
                 $bar->advance(count($cityList));
                 $countResult['city'] += count($cityList);
             }
             $countResult['province'] += count($provinceList);
-            DB::table('province_city_area')->insert($provinceList);
+            DB::table('areas')->insert($provinceList);
             $bar->advance(count($provinceList));
             $bar->finish();
             $this->line('');

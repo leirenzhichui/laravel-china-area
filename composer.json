@@ -1,31 +1,25 @@
 {
-  "name": "aoxiang/province-city-area",
+  "name": "ydjharris/china-area",
   "description": "China Province City Area From JD.COM",
   "type": "library",
   "require": {
     "php": "^7.0",
-    "guzzlehttp/guzzle": "~6.0"
+    "guzzlehttp/guzzle": "^7.0"
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Aoxiang\\Pca\\ProvinceCityAreaServiceProvider"
+        "Ydjharris\\Area\\ChinaAreaServiceProvider"
       ],
       "alias": {
-        "ProvinceCityArea": "Aoxiang\\Pca\\Facades\\ProvinceCityAreaFacades"
+        "ChinaArea": "Ydjharris\\Area\\Facades\\ChinaAreaFacades"
       }
     }
   },
   "license": "MIT",
-  "authors": [
-    {
-      "name": "Aoxiang",
-      "email": "mail@aoxiang.me"
-    }
-  ],
   "autoload": {
     "psr-4": {
-      "Aoxiang\\Pca\\": "src/"
+      "Ydjharris\\Area\\": "src/"
     }
   },
   "minimum-stability": "dev"
