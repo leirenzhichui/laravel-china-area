@@ -14,7 +14,7 @@ https://github.com/aoxiang594/laravel-province-city-area
 
 #### Composer 安装
 ```
-composer require aoxiang/province-city-area
+composer require ydjharris/china-area
 ```
 
 #### 生成数据库迁移文件：
