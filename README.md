@@ -30,12 +30,12 @@ php artisan migrate
 
 #### 最后一步:从京东获取新的「省市县乡镇街道」数据
 ```
-php artisan pca:refreshData
+php artisan area:refreshData
 ```
 
 #### 其他
 
-`php artisan pca:refreshData -d:file|jd` 
+`php artisan area:refreshData -d:file|jd` 
 更新数据有一个参数 driver
 
 | 参数值 | 说明 |
@@ -45,10 +45,10 @@ php artisan pca:refreshData
 
 
 ```
-php artisan pca:refreshData
+php artisan area:refreshData
 
 您选择从本地文件中载入省市县数据
-如果您要强制从京东获取，请执行php artisan pca:refreshData -d jd
+如果您要强制从京东获取，请执行php artisan area:refreshData -d jd
 已从本地加载数据完毕，共48054条
 数据最后更新时间:2019-06-08 22:50:30
 正在插入数据库
@@ -60,7 +60,7 @@ php artisan pca:refreshData
 
 
 ```
-php artisan pca:refreshData -d jd
+php artisan area:refreshData -d jd
 
 获取数据成功:云南昆明市盘龙区双龙街道
 获取数据成功:云南昆明市盘龙区松华街道
